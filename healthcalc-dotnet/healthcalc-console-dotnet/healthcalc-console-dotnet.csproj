@@ -9,4 +9,9 @@
     <AssemblyName>ConsoleApplication</AssemblyName>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="healthcalc-ninegroup" Version="1.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
+  </ItemGroup>
+
 </Project>
