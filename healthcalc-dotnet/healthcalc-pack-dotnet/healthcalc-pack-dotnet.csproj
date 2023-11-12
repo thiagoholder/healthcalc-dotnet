@@ -1,10 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <RootNamespace>healthcalc_pack_dotnet</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PackageId>healthcalc-ninegroup</PackageId>
+    <Title>Package de calculo IMC do grupo 9 do Curso de Eng. Software PUC Minhas 2023</Title>
+    <Authors>Thiago Holder, Dara Negreiros, Deivis Neves, Mariana, Terra</Authors>
+    <Company>Engenharia de Software - PUC Minas</Company>
+    <Description>Este package faz parte dos entregaveis da disciplina de Projetos Integrados do curso de Engenharia de Software. Tem como objetivo realizar calculo do IMC e nutrientes.</Description>
+    <RepositoryUrl>https://github.com/thiagoholder/healthcalc-dotnet</RepositoryUrl>
   </PropertyGroup>
 
 </Project>
