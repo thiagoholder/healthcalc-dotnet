@@ -4,28 +4,23 @@ namespace healthcalc_pack_dotnet
 {
     public class IMC : IIMC
     {
-        public double CalcularIMC(double Peso, double Altura)
-        {
-            if (Altura == 0)
-                throw new Exception("Altura inválida!");
+        private readonly IIMCCalculator imcCalculator;
+        private readonly IIMCClassification imcClassification;
 
-            return Math.Round(Peso / (Altura * Altura),  2);
+        public IMC(IIMCCalculator imcCalculator, IIMCClassification imcClassification)
+        {
+            this.imcCalculator = imcCalculator ?? throw new ArgumentNullException(nameof(imcCalculator));
+            this.imcClassification = imcClassification ?? throw new ArgumentNullException(nameof(imcClassification));
         }
 
-        public string RetornarClassificaoIMC(double IMC)
+        public double CalcularIMC(double peso, double altura)
         {
-            if (IMC <= 18.5)
-                return "ABAIXO DO PESO";
-            else if (IMC >= 18.6 && IMC <= 24.9)
-                return "PESO NORMAL";
-            else if (IMC > 24.9 && IMC <= 29.9)
-                return "SOBREPESO";
-            else if (IMC > 29.9 && IMC <= 34.9)
-                return "OBESIDADE I";
-            else if (IMC > 34.9 && IMC <= 39.9)
-                return "OBESIDADE II";
-            else
-                return "OBESIDADE III";
+            return imcCalculator.CalcularIMC(peso, altura);
+        }
+
+        public string RetornarClassificaoIMC(double imc)
+        {
+            return imcClassification.ClassificarIMC(imc);
         }
     }
 }
